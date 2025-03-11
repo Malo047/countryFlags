@@ -17,9 +17,9 @@
     <form id="form" action="">
         <h2>Search Country</h2><br>
         <label for="nameCountry">
-            <input class="input" type="text" value="" name="nameCountry" placeholder="Enter with country name">
+            <input id="inputSearch" class="input" type="text" value="" name="nameCountry" placeholder="Enter with country name">
         </label>
-        <p class="hidden">Preenchimento obrigatório</p>
+        <p id="preenchimentoObrigatorio" class="hidden">Preenchimento obrigatório</p>
         <br>
         <label for="countryCapital">
             <input id="countryCapital" class="hidden" type="text" value="" name="countryCapital">
@@ -27,9 +27,12 @@
         <label for="currencyCoin">
             <input id="currencyCoin" class="hidden" type="text" value="" name="currencyCoin">
         </label><br>
-        <button id="srcButton">Search</button>
+        <button id="srcButton">Search</button><br>
+        <div id="flag">
+        </div>
     </form>
 
+    
 
     <script src="./js/index.js"></script>
 </body>

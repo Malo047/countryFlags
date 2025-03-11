@@ -10,7 +10,7 @@ body{
 #form{
         background-color: #fff;
         width: 450px;
-        height: 350px;
+        height: 400px;
         border-radius: 10px;
         display: flex;
         flex-direction: column;
@@ -30,4 +30,14 @@ body{
     border-color: #fff;
     box-shadow: 0 5px 5px 0;
     cursor: pointer;
+}
+#flag{
+    width: 30%;
+    height: 25%;
+    border: solid 1px black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 800;
+    font-size: 40px;
 }
