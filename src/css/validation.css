@@ -1,0 +1,12 @@
+.hidden{
+    display: none;
+}
+
+.vazio{
+    border-color: red;
+}
+#form p{
+    color: red;
+    font-size: 10px;
+    margin-left: -25px;
+}
