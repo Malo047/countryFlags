@@ -3,18 +3,24 @@ document.getElementById('srcButton').addEventListener('click', async (event) => 
 
     let inputCountryCapital = document.getElementById('countryCapital');
     let inputCurrencyCoin = document.getElementById('currencyCoin');
-
-    inputCountryCapital.classList.remove('hidden');
-    inputCurrencyCoin.classList.remove('hidden');
-    
+    let inputSearch = document.getElementById('searchInput');
+    let preenchimentoObrigatorio = document.getElementById('preenchimentoObrigatorio');
     let search = document.querySelector('input.input').value.trim();
-    
+ 
     if (!search) {
         console.error("Digite um país válido!");
+        inputSearch.classList.add('vazio')
+        preenchimentoObrigatorio.classList.remove('hidden')
         return;
     }
 
+    inputCountryCapital.classList.remove('hidden');
+    inputCurrencyCoin.classList.remove('hidden');
+
     async function getCountry(search) {
+        inputSearch.classList.remove('vazio')
+        preenchimentoObrigatorio.classList.add('hidden')
+        
         try {
             let response = await fetch(`https://restcountries.com/v3.1/name/${search}?fields=name,flags,capital,currencies`);
 
