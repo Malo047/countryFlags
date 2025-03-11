@@ -2,17 +2,26 @@ document.getElementById('srcButton').addEventListener('click', async (event) => 
     event.preventDefault();
 
     let inputCountryCapital = document.getElementById('countryCapital');
-    let inputCurrencyCoin = document.getElementById('currencyCoin');
-
-    inputCountryCapital.classList.remove('hidden');
-    inputCurrencyCoin.classList.remove('hidden');
-    
+    let inputCurrencyCoin = document.getElementById('currencyCoin');    
     let search = document.querySelector('input.input').value.trim();
+    let preenchimentoObrigatorioBorder = document.getElementById('inputSearch');
+    let preenchimentoObrigatorio = document.getElementById('preenchimentoObrigatorio');
+    let flags = document.getElementById('flag');
     
     if (!search) {
         console.error("Digite um país válido!");
+        preenchimentoObrigatorioBorder.classList.add('vazio')
+        preenchimentoObrigatorio.classList.remove('hidden')
+        inputCountryCapital.classList.add('hidden');
+        inputCurrencyCoin.classList.add('hidden');
+        flags.style.backgroundImage = 'none';
         return;
     }
+
+    inputCountryCapital.classList.remove('hidden');
+    inputCurrencyCoin.classList.remove('hidden');
+    preenchimentoObrigatorioBorder.classList.remove('vazio')
+    preenchimentoObrigatorio.classList.add('hidden')
 
     async function getCountry(search) {
         try {
@@ -37,9 +46,17 @@ document.getElementById('srcButton').addEventListener('click', async (event) => 
             } else {
                 inputCurrencyCoin.value = "Sem moeda disponível";
             }
-            
+            flags.style.backgroundImage = `url(${country.flags.png})`;
+            flags.style.backgroundSize = "cover";
+            flags.style.backgroundPosition = "center";
+                
         } catch (error) {
             console.error("Erro ao carregar o país:", error);
+            preenchimentoObrigatorioBorder.classList.add('vazio')
+            preenchimentoObrigatorio.classList.remove('hidden')
+            inputCountryCapital.classList.add('hidden');
+            inputCurrencyCoin.classList.add('hidden');
+            flags.style.backgroundImage = 'none';
         }
     }
 
