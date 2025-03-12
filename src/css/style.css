@@ -10,7 +10,7 @@ body{
 #form{
         background-color: #fff;
         width: 450px;
-        height: 400px;
+        height: 500px;
         border-radius: 10px;
         display: flex;
         flex-direction: column;
@@ -18,6 +18,9 @@ body{
 }
 #form h2{
     color: #ac491b;
+}
+#form input{
+    width: 80%;
 }
 #srcButton{
     width: 40%;
@@ -32,8 +35,8 @@ body{
     cursor: pointer;
 }
 #flag{
-    width: 30%;
-    height: 25%;
+    width: 60%;
+    height: 40%;
     border: solid 1px black;
     display: flex;
     justify-content: center;
